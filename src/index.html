@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet">
+    <script type="module">
+    import { animate } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
+
+    let direction = 1; // 1 for clockwise, -1 for counterclockwise
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector(".box").addEventListener("click", () => {
+                animate(".box", { rotate: 720* direction }, { duration: 2 });
+                direction *= -1; 
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+        // FadeIn Animation
+        document.querySelector(".fadeIn").addEventListener("click", () => {
+            animate(".fadeIn", { opacity: 1 }, { duration: 1 });
+        });
+
+        // Scale Animation
+        document.querySelector(".scale").addEventListener("click", () => {
+            animate(".scale", { scale: [0.5, 1] }, { duration: 1.5, easing: "ease-in-out" });
+        });
+
+        // Bounce Effect
+        document.querySelector(".bounce").addEventListener("click", () => {
+            animate(".bounce", { y: [0, -20, 0] }, { duration: 0.6, repeat: Infinity, ease: "easeInOut" });
+        });
+
+        // Hover Scale Animation
+        document.querySelector(".hoverScale").addEventListener("mouseenter", () => {
+            animate(".hoverScale", { scale: 1.1 }, { duration: 0.2 });
+        });
+        document.querySelector(".hoverScale").addEventListener("mouseleave", () => {
+            animate(".hoverScale", { scale: 1 }, { duration: 0.2 });
+        });
+
+        // Drag Effect
+        document.querySelector(".drag").addEventListener("click", () => {
+            animate(".drag", { x: 100 }, { type: "spring", stiffness: 100 });
+        });
+
+        // Scroll Reveal Animation
+        document.querySelector(".scrollReveal").addEventListener("scroll", () => {
+            animate(".scrollReveal", { opacity: 1, y: 0 }, { duration: 1 });
+        });
+
+        // Layout Animation
+        document.querySelector(".layout").addEventListener("click", () => {
+            animate(".layout", { scale: [1, 0.8] }, { duration: 0.5 });
+        });
+    });
+
+    </script>
+</head>
+<body>
+    <section class="bg-gray-500 w-full h-full">
+        <div class="flex flex-col items-center justify-center h-[200px] mb-[10px] text-white">
+            <h1 class="py-3 text-7xl text-center font-bold">Intro to Framer Motion</h1>
+            <img class="box w-[100px] h-[100px] rounded-2xl" src="framer logo.png">
+        </div>
+    
+
+        <div class="w-full h-[20px] bg-gray-950"></div>
+        <div class="flex flex-row items-center h-[200px] space-x-6 text-white">
+            <p class="text-left text-3xl font-bold px-[10px]">What is Framer Motion?</p>
+            <div class=" h-[200px] w-[20px] bg-gray-950"></div>
+            <p class="text-left text-3xl font-semibold px-[10px]"><span class="underline ">An animation library used for: </span><br/> Vanilla Javascript <br/> React <br/> Vue </p>
+        </div>
+        <div class="text-center w-full h-[20px] bg-gray-950 rounded-b-2xl mb-6"></div>
+
+        <div class="w-full h-[20px] bg-gray-950 rounded-t-2xl"></div>
+        <div class="flex flex-row items-center h-[465px] space-x-6 text-white">
+            <p class="text-left text-3xl font-bold px-[10px]">Set up/Installation</p>
+            <div class="h-[465px] w-[20px] bg-gray-950"></div>
+            <div class="flex flex-col items-left justify-center h-[465px] space-y-6 text-xl text-white">
+                <p> <a class="underline font-bold" href="https://motion.dev/docs/quick-start"> Quickstart guide </a> <br/> 1. npm install motion <br/> 2. Place script tag in header</p>
+                <img src="code.png"/>
+
+            </div>
+
+            
+        </div>
+        <div class="text-center w-full h-[20px] bg-gray-950 rounded-b-2xl"></div>
+
+        <p class="text-left text-5xl mt-[120px] mb-[10px] font-bold text-white">Now for some examples</p>
+
+        <div class="text-center  w-full h-[20px] bg-gray-950 rounded-t-2xl"></div>
+
+
+<!-- now show 7 examples of diff animations, and maybe at end link quickstart for tailwind cli -->
+
+        <div class="flex flex-row items-center h-[300px] space-x-6 text-white">
+            <p class=" w-[400px] text-center text-5xl font-bold px-[10px]">Fade In</p>
+            <div class=" h-[300px] w-[20px] bg-gray-950"></div>
+
+            <div class="w-64 h-64 bg-black rounded-lg">
+            <!-- Content here -->
+            </div>
+        </div>
+
+        
+    </section>
+    
+</body>
+</html>
